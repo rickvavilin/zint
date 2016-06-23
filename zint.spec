@@ -73,7 +73,7 @@ rm -f backend/ms_stdint.h
 rm -f frontend/getopt*.*
 
 %build
-%cmake CMakeLists.txt
+cmake CMakeLists.txt
 make VERBOSE=1 %{?_smp_mflags}
 
 cat <<EOF >zint-qt.desktop
@@ -92,7 +92,7 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/%{_datadir}/cmake
-install -D -p -m 644 frontend_qt4/images/%{name}_white.png %{buildroot}/usr/share/pixmaps/%{name}.png
+install -D -p -m 644 frontend_qt4/images/%{name}.png %{buildroot}/usr/share/pixmaps/%{name}.png
 install -D -p -m 644 %{name}-qt.desktop %{buildroot}%{_datadir}/applications/%{name}-qt.desktop
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-qt.desktop
 
