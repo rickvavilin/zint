@@ -8,6 +8,7 @@ Source:    https://github.com/downloads/zint/zint/%{name}-%{version}.src.tar.gz
 Group:     Applications/Engineering
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
+Requires: libpng
 BuildRequires: cmake
 BuildRequires: libpng-devel
 BuildRequires: zlib-devel
